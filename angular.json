@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "MCP-Admin"
+    }
+  },
+  "defaultProject": "MCP-Admin",
+  "cli": {
+    "analytics": false
+  }
 }
