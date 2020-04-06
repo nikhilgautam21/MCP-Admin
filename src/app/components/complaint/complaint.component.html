@@ -35,8 +35,8 @@
         </div>
         <div class="complaint-img" *ngIf="complaint.images.length > 0">
             <div *ngFor="let item of complaint.images">
-                <img class="comp-img" [src]="item" alt="" />
+                <img class="comp-img" [src]="item" alt="" (click)="showFullImage(item)" />
             </div>
         </div>
     </div>
-<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>
+    <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>

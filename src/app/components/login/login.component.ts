@@ -32,9 +32,7 @@ export class LoginComponent implements OnInit {
   login() {
     if (this.loginForm.valid) {
       this.loading = true;
-      debugger
       this.loginService.login(this.loginForm.value).subscribe(res => {
-        debugger
         this.loading = false;
         if(res["success"]){
           localStorage.setItem("x-auth-token",res["x-auth-token"])

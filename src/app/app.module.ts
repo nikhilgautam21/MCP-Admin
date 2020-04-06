@@ -16,6 +16,7 @@ import {TableModule} from 'primeng/table';
 import {ButtonModule} from 'primeng/button';
 import { ComplaintComponent } from './components/complaint/complaint.component';
 import {DropdownModule} from 'primeng/dropdown';
+import { ImageComponent } from './components/image/image.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {DropdownModule} from 'primeng/dropdown';
     HeaderComponent,
     DashboardComponent,
     LoginComponent,
-    ComplaintComponent
+    ComplaintComponent,
+    ImageComponent
   ],
   imports: [
     BrowserModule,

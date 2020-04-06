@@ -3,13 +3,13 @@
     <form [formGroup]="loginForm" (submit)="login()">
         <div class="form">
             <input formControlName="username" type="text" id="username" placeholder="username"  />
-            <div *ngIf="(loginForm.controls.username.dirty || loginForm.controls.username.touched)" class="alert alert-danger">
+            <div *ngIf="(loginForm.controls.username.dirty || loginForm.controls.username.touched)">
                 <span class= "error-text" *ngIf="loginForm.controls.username.hasError('required')">
                     Username is required.
                 </span>
             </div>
             <input formControlName="password" type="password" id="password" placeholder="password" />
-            <div *ngIf="(loginForm.controls.password.dirty || loginForm.controls.password.touched)" class="alert alert-danger">
+            <div *ngIf="(loginForm.controls.password.dirty || loginForm.controls.password.touched)" >
                 <span class= "error-text" *ngIf="loginForm.controls.password.hasError('required')">
                     Password is required.
                 </span>

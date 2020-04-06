@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 import { ComplaintService } from 'src/app/services/complaint.service';
 import { STATUS } from 'src/app/constants/status.constant';
 import { MessageService } from 'primeng/api';
@@ -19,7 +19,8 @@ export class ComplaintComponent implements OnInit {
   constructor(
     public route: ActivatedRoute,
     public complaintService: ComplaintService,
-    public messageService: MessageService
+    public messageService: MessageService,
+    public router: Router
   ) {
     this.statuses = [
       { "label": "On Hold", "value": "onhold" },
@@ -34,10 +35,6 @@ export class ComplaintComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  }
-
-  showFullImage() {
-    this.showModal = true;
   }
 
   changeStatus() {
@@ -58,7 +55,15 @@ export class ComplaintComponent implements OnInit {
     } else {
       this.messageService.add({ severity: 'info', summary: 'Alert', detail: "Choose a different status" });
     }
+  }
 
+  showFullImage(url){
+    let navigationExtras : NavigationExtras = {
+      queryParams :{
+        "imageUrl": url
+      }
+    }
+    this.router.navigate(['/image'],navigationExtras)
   }
 
 }

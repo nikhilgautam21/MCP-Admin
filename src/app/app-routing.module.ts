@@ -5,6 +5,7 @@ import { AuthGuardService } from './services/auth-guard.service';
 import { LoginComponent } from './components/login/login.component';
 import { DirectAccessGuardService } from './services/direct-access-guard.service';
 import { ComplaintComponent } from './components/complaint/complaint.component';
+import { ImageComponent } from './components/image/image.component';
 
 
 const routes: Routes = [
@@ -26,6 +27,11 @@ const routes: Routes = [
   {
     path: "complaint",
     component: ComplaintComponent,
+    canActivate:[DirectAccessGuardService]
+  },
+  {
+    path: "image",
+    component: ImageComponent,
     canActivate:[DirectAccessGuardService]
   },
   {

@@ -11,7 +11,6 @@ export class APIInterceptor implements HttpInterceptor {
   constructor(private utils: UtilityService) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler) {
-    debugger
     // Get the auth token from the service.
     const authToken = this.utils.getToken();
 
