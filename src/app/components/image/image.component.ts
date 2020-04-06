@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AnyMxRecord } from 'dns';
 import { Location } from '@angular/common';
 
 @Component({
