@@ -10,7 +10,8 @@ import { API_CONSTANT } from '../constants/api.constant';
 export class LoginService {
   baseUrl:any = environment.apiUrl + SYSTEM_CONSTANT.API_TAG
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+   }
 
   login(data){
     return this.httpClient.post(`${this.baseUrl}${API_CONSTANT.ADMIN_LOGIN}`,data)

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { LoginService } from 'src/app/services/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -6,14 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  admin:any;
 
-  adminName:any;
-  constructor() {
-    let admin = JSON.parse(localStorage.getItem('user'))
-    this.adminName = admin["username"]
-   }
+  constructor(public loginService:LoginService,public router:Router) {
+  }
 
   ngOnInit(): void {
+  }
+
+  logout(){
+    localStorage.removeItem("admin")
+    localStorage.removeItem("x-auth-token")
+    this.router.navigate(["/login"])
+  }
+
+  get user(): any {
+    return JSON.parse(localStorage.getItem('admin'));
   }
 
 

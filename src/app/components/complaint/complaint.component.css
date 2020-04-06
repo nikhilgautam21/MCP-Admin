@@ -1,0 +1,22 @@
+.complaint-outer{
+    padding:20px
+}
+
+.complaint-inner{
+    margin-top: 10px;
+    max-height: 75vh;
+    border: 1px solid rgb(134, 134, 134)
+}
+
+.complaint-detail{
+    padding: 10px;
+}
+
+.complaint-img{
+    padding:10px
+}
+
+.comp-img{
+    width: 200px;
+    height: 200px;
+}

@@ -1,0 +1,42 @@
+<div class="complaint-outer">
+    <p-toast position="top-right" [style]="{marginTop: '80px'}"></p-toast>
+    <div>
+        <div class="back">
+            <button pButton type="button" label="Back To Dashboard" routerLink="/dashboard"></button>
+        </div>
+        <div class="change-status">
+            <p-dropdown [options]="statuses" [(ngModel)]="selectedStatus"></p-dropdown>
+            <button pButton type="button" label="Change Status" (click)="changeStatus()"></button>
+        </div>
+    </div>
+    <div class="complaint-inner">
+        <div class="compaint-detail">
+            <span>
+                <h3><b>Complaint Number: </b>{{complaint.complaint_number}}</h3>
+            </span>
+            <span>
+                <h4><b>Name :</b>{{complaint.name}}</h4>
+            </span>
+            <span>
+                <h4><b>Date :</b>{{complaint.date}}</h4>
+            </span>
+            <span>
+                <h4><b>Status :</b>{{complaint.show_status}}</h4>
+            </span>
+            <span>
+                <h4><b>Phone :</b>{{complaint.phone}}</h4>
+            </span>
+            <span>
+                <h4><b>Address :</b>{{complaint.address}}</h4>
+            </span>
+            <span>
+                <h4><b>Notes:</b>{{complaint.notes}}</h4>
+            </span>
+        </div>
+        <div class="complaint-img" *ngIf="complaint.images.length > 0">
+            <div *ngFor="let item of complaint.images">
+                <img class="comp-img" [src]="item" alt="" />
+            </div>
+        </div>
+    </div>
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>
