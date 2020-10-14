@@ -21,8 +21,8 @@ export class LoginComponent implements OnInit {
     public messageService: MessageService
     ) {
     this.loginForm = this.formBuilder.group({
-      username: ['nikhil', [Validators.required]],
-      password: ['admin', [Validators.required]]
+      username: ['', [Validators.required]],
+      password: ['', [Validators.required]]
     })
   }
 
